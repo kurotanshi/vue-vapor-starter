@@ -17,8 +17,6 @@
     "@types/node": "^22.5.0",
     "@vitejs/plugin-vue": "npm:@vue-vapor/vite-plugin-vue@latest",
     "terser": "^5.31.6",
-    "typescript": "^5.5.4",
-    "vite": "^5.4.2",
-    "vue-tsc": "^2.0.29"
+    "vite": "^5.4.2"
   }
 }

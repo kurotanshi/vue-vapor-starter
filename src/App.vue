@@ -1,13 +1,8 @@
-<script setup lang="ts" vapor>
+<script setup vapor>
 import { computed, version } from 'vue'
 import { useLocalStorage } from '@vueuse/core'
 
-interface Task {
-  title: string
-  completed: boolean
-}
-
-const tasks = useLocalStorage<Task[]>('tasks', [])
+const tasks = useLocalStorage('tasks', [])
 const value = useLocalStorage('value', '')
 
 const remaining = computed(() => {
@@ -22,8 +17,8 @@ function handleAdd() {
   value.value = ''
 }
 
-function handleComplete(index: number, evt: Event) {
-  tasks.value[index].completed = (evt.target as HTMLInputElement).checked
+function handleComplete(index, evt) {
+  tasks.value[index].completed = (evt.target).checked
 }
 
 function handleClearComplete() {
@@ -34,7 +29,7 @@ function handleClearAll() {
   tasks.value = []
 }
 
-function handleRemove(idx: number) {
+function handleRemove(idx) {
   tasks.value.splice(idx, 1)
 }
 </script>
